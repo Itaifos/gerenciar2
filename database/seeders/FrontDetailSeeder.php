@@ -60,7 +60,7 @@ class FrontDetailSeeder extends Seeder
         $trFrontDetail->faq_description = 'Answers to the most frequently asked questions.';
 
         $trFrontDetail->contact_heading = 'Contact';
-        $trFrontDetail->footer_copyright_text = '© 2025 TableTrack. All Rights Reserved.';
+        $trFrontDetail->footer_copyright_text = '© 2025 Gerenciar. All Rights Reserved.';
         $trFrontDetail->save();
 
     }

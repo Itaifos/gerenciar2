@@ -13,7 +13,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('global_settings', function (Blueprint $table) {
-            $table->boolean('disable_landing_site')->default(false);
+            // $table->boolean('disable_landing_site')->default(false);
+            $table->boolean('disable_landing_site')->default(true);
             $table->enum('landing_site_type', ['theme', 'custom'])->default('theme');
             $table->string('landing_site_url')->nullable();
         });
