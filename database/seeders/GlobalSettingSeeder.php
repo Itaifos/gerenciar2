@@ -17,8 +17,8 @@ class GlobalSettingSeeder extends Seeder
     {
         $setting = new GlobalSetting();
         $setting->name = 'Gerenciar';
-        $setting->theme_hex = '#A78BFA';
-        $setting->theme_rgb = '167, 139, 250';
+        $setting->theme_hex = '#FF5C33';
+        $setting->theme_rgb = '255, 92, 51';
         $setting->hash = md5(microtime());
         $setting->installed_url = config('app.url');
         $setting->facebook_link = 'https://www.facebook.com/';
