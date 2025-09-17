@@ -59,8 +59,8 @@ class RestaurantSettingSeeder extends Seeder
             $setting->address = fake()->address();
             $setting->phone_number = fake()->e164PhoneNumber;
             $setting->timezone = 'America/New_York';
-            $setting->theme_hex = '#A78BFA';
-            $setting->theme_rgb = '167, 139, 250';
+            $setting->theme_hex = '#FF5C33';
+            $setting->theme_rgb = '255, 92, 51';
             $setting->email = str()->slug($companyName, '.') . '@example.com';
             $setting->country_id = $country->id;
             $setting->package_id = 1; // Assuming package_id is 1 for seeding

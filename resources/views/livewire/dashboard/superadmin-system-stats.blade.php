@@ -49,18 +49,18 @@
         </div>
 
         <!-- Total Subscriptions -->
-        <div class="bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 p-4 rounded-lg border border-purple-200 dark:border-purple-800">
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 p-4 rounded-lg border border-orange-200 dark:border-orange-800">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-sm font-medium text-purple-600 dark:text-purple-400">
+                    <p class="text-sm font-medium text-orange-600 dark:text-orange-400">
                         @lang('modules.dashboard.totalSubscriptions')
                     </p>
-                    <p class="text-2xl font-bold text-purple-900 dark:text-purple-100">
+                    <p class="text-2xl font-bold text-orange-900 dark:text-orange-100">
                         {{ number_format($totalSubscriptions) }}
                     </p>
                 </div>
-                <div class="p-2 bg-purple-100 dark:bg-purple-800 rounded-lg">
-                    <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="p-2 bg-orange-100 dark:bg-orange-800 rounded-lg">
+                    <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>

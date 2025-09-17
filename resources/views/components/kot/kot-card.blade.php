@@ -15,7 +15,7 @@
                         'inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-medium',
                         'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 border border-blue-200 dark:border-blue-700' => $kot->order->order_type === 'dine_in',
                         'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 border border-green-200 dark:border-green-700' => $kot->order->order_type === 'takeaway',
-                        'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 border border-purple-200 dark:border-purple-700' => $kot->order->order_type === 'pickup',
+                        'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 border border-orange-200 dark:border-orange-700' => $kot->order->order_type === 'pickup',
                         'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 border border-orange-200 dark:border-orange-700' => $kot->order->order_type === 'delivery',
                         'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600' => !in_array($kot->order->order_type, ['dine_in', 'takeaway', 'pickup', 'delivery'])
                     ])>

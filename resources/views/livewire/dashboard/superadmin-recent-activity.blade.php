@@ -24,7 +24,7 @@
                                     'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white dark:ring-gray-800',
                                     'bg-blue-500' => $activity['color'] === 'blue',
                                     'bg-green-500' => $activity['color'] === 'green',
-                                    'bg-purple-500' => $activity['color'] === 'purple',
+                                    'bg-orange-500' => $activity['color'] === 'purple',
                                     'bg-red-500' => $activity['color'] === 'red',
                                     'bg-yellow-500' => $activity['color'] === 'yellow',
                                     'bg-indigo-500' => $activity['color'] === 'indigo'
@@ -85,7 +85,7 @@
     <!-- Quick Stats -->
     <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
         <div class="text-center">
-            <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">
+            <div class="text-2xl font-bold text-orange-600 dark:text-orange-400">
                 {{ count($recentRestaurants) }}
             </div>
             <div class="text-sm text-gray-500 dark:text-gray-400">

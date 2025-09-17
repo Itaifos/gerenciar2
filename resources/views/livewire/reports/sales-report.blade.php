@@ -167,39 +167,39 @@
             </div>
 
             <!-- Tax Breakdown Card -->
-            <div class="p-4 bg-purple-50 rounded-xl shadow-sm dark:bg-purple-900/10 border border-purple-100 dark:border-purple-800">
+            <div class="p-4 bg-orange-50 rounded-xl shadow-sm dark:bg-orange-900/10 border border-orange-100 dark:border-orange-800">
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="text-base font-semibold text-gray-800 dark:text-gray-200">@lang('modules.report.taxBreakdown')</h3>
-                    <div class="p-2 bg-purple-100 rounded-lg dark:bg-purple-800/50">
-                        <svg class="w-4 h-4 text-purple-500 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="p-2 bg-orange-100 rounded-lg dark:bg-orange-800/50">
+                        <svg class="w-4 h-4 text-orange-500 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                         </svg>
                     </div>
                 </div>
                 <div class="space-y-2">
-                    <div class="flex items-center justify-between rounded-lg bg-purple-100/50 p-3 dark:bg-purple-900/20">
-                        <span class="text-sm font-medium text-purple-700 dark:text-purple-200">
+                    <div class="flex items-center justify-between rounded-lg bg-orange-100/50 p-3 dark:bg-orange-900/20">
+                        <span class="text-sm font-medium text-orange-700 dark:text-orange-200">
                             @lang('modules.report.taxMode')
                         </span>
-                        <span class="text-sm font-bold text-purple-800 dark:text-purple-200 capitalize">
+                        <span class="text-sm font-bold text-orange-800 dark:text-orange-200 capitalize">
                             {{ $taxMode }}
                         </span>
                     </div>
-                    <div class="flex items-center justify-between rounded-lg bg-purple-100/50 p-3 dark:bg-purple-900/20">
-                        <span class="text-sm font-medium text-purple-700 dark:text-purple-200">
+                    <div class="flex items-center justify-between rounded-lg bg-orange-100/50 p-3 dark:bg-orange-900/20">
+                        <span class="text-sm font-medium text-orange-700 dark:text-orange-200">
                             @lang('modules.report.totalTaxCollection')
                         </span>
-                        <span class="text-sm font-bold text-purple-800 dark:text-purple-200">
+                        <span class="text-sm font-bold text-orange-800 dark:text-orange-200">
                             {{ currency_format($menuItems->sum('total_tax_amount'), $currencyId) }}
                         </span>
                     </div>
 
                     @foreach($allTaxes as $taxName => $taxData)
-                        <div class="flex items-center justify-between rounded-lg bg-purple-100/50 p-3 dark:bg-purple-900/20">
-                            <span class="text-sm font-medium text-purple-700 dark:text-purple-200">
+                        <div class="flex items-center justify-between rounded-lg bg-orange-100/50 p-3 dark:bg-orange-900/20">
+                            <span class="text-sm font-medium text-orange-700 dark:text-orange-200">
                                 {{ $taxName }} ({{ number_format($taxData['percent'], 2) }}%)
                             </span>
-                            <span class="text-sm font-bold text-purple-800 dark:text-purple-200">
+                            <span class="text-sm font-bold text-orange-800 dark:text-orange-200">
                                 {{ currency_format($taxData['total_amount'], $currencyId) }}
                             </span>
                         </div>

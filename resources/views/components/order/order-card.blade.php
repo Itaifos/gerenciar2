@@ -68,7 +68,7 @@
                         @class([
                             'text-yellow-300' => $order->order_status->value == 'placed',
                             'text-indigo-500' => $order->order_status->value == 'confirmed',
-                            'text-purple-500' => $order->order_status->value == 'preparing',
+                            'text-orange-500' => $order->order_status->value == 'preparing',
                             'text-blue-400' => $order->order_status->value == 'ready_for_pickup',
                             'text-blue-500' => $order->order_status->value == 'out_for_delivery',
                             'text-green-400' => $order->order_status->value == 'served',

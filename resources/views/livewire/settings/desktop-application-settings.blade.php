@@ -156,42 +156,42 @@
     </button>
 </div>
                     <!-- White Label Custom Desktop App Section -->
-                    <div class="py-10 mb-6 p-6 border rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-purple-200 dark:border-purple-800">
+                    <div class="py-10 mb-6 p-6 border rounded-lg bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 border-orange-200 dark:border-orange-800">
                         <div class="flex items-center mb-4">
                             <div class="flex-shrink-0">
-                                <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-8 h-8 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
                             <div class="ml-3">
-                                <h5 class="text-lg font-semibold text-purple-900 dark:text-purple-100">@lang('superadmin.whiteLabelDesktopApp')</h5>
-                                <p class="text-sm text-purple-700 dark:text-purple-300">@lang('superadmin.whiteLabelDesktopAppDescription')</p>
+                                <h5 class="text-lg font-semibold text-orange-900 dark:text-orange-100">@lang('superadmin.whiteLabelDesktopApp')</h5>
+                                <p class="text-sm text-orange-700 dark:text-orange-300">@lang('superadmin.whiteLabelDesktopAppDescription')</p>
                             </div>
                         </div>
 
                         <div class="mb-4">
-                            <h6 class="font-medium text-purple-800 dark:text-purple-200 mb-3">@lang('superadmin.whiteLabelFeatures')</h6>
-                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-purple-700 dark:text-purple-300">
+                            <h6 class="font-medium text-orange-800 dark:text-orange-200 mb-3">@lang('superadmin.whiteLabelFeatures')</h6>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-orange-700 dark:text-orange-300">
                                 <li class="flex items-start">
-                                    <svg class="w-4 h-4 text-purple-600 dark:text-purple-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg class="w-4 h-4 text-orange-600 dark:text-orange-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                     </svg>
                                     @lang('superadmin.whiteLabelFeature1')
                                 </li>
                                 <li class="flex items-start">
-                                    <svg class="w-4 h-4 text-purple-600 dark:text-purple-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg class="w-4 h-4 text-orange-600 dark:text-orange-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                     </svg>
                                     @lang('superadmin.whiteLabelFeature2')
                                 </li>
                                 <li class="flex items-start">
-                                    <svg class="w-4 h-4 text-purple-600 dark:text-purple-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg class="w-4 h-4 text-orange-600 dark:text-orange-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                     </svg>
                                     @lang('superadmin.whiteLabelFeature3')
                                 </li>
                                 <li class="flex items-start">
-                                    <svg class="w-4 h-4 text-purple-600 dark:text-purple-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg class="w-4 h-4 text-orange-600 dark:text-orange-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                     </svg>
                                     @lang('superadmin.whiteLabelFeature4')
@@ -203,7 +203,7 @@
                         <div class="flex justify-center">
                             <a href="https://envato.froid.works/my-account?tab=desktop-app"
                                 target="_blank"
-                                class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors">
+                                class="inline-flex items-center justify-center px-6 py-3 bg-orange-600 text-white font-medium rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                                 </svg>
