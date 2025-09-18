@@ -32,8 +32,21 @@ RUN echo '<VirtualHost *:80>\n\
 # Definir diretório de trabalho
 WORKDIR /var/www/html
 
+# Criar diretórios necessários antes de copiar arquivos
+RUN mkdir -p /var/www/html/bootstrap/cache \
+    && mkdir -p /var/www/html/storage/logs \
+    && mkdir -p /var/www/html/storage/framework/cache \
+    && mkdir -p /var/www/html/storage/framework/sessions \
+    && mkdir -p /var/www/html/storage/framework/views \
+    && mkdir -p /var/www/html/storage/app/public
+
 # Copiar arquivos do projeto
 COPY . .
+
+# Configurar permissões básicas antes do composer
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 /var/www/html/bootstrap/cache \
+    && chmod -R 775 /var/www/html/storage
 
 # Instalar dependências PHP
 RUN composer install --no-dev --optimize-autoloader
@@ -41,10 +54,11 @@ RUN composer install --no-dev --optimize-autoloader
 # Instalar dependências Node.js e build
 RUN npm install && npm run build
 
-# Configurar permissões
+# Configurar permissões finais
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html/storage \
-    && chmod -R 755 /var/www/html/bootstrap/cache
+    && chmod -R 755 /var/www/html/bootstrap/cache \
+    && chmod -R 755 /var/www/html/public
 
 # Configurar supervisor para Laravel Queue
 RUN echo '[program:laravel-worker]\n\
