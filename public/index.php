@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 
 
-if (!file_exists('../.env')) {
+// Allow running without a physical .env when environment variables are provided (e.g., EasyPanel)
+if (!file_exists('../.env') && empty(getenv('APP_KEY'))) {
     $GLOBALS["error_type"] = "env-missing";
     include('error_install.php');
     exit(1);
