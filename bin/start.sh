@@ -1,12 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Detectar diretório do app
-if [ -f /app/public/index.php ]; then
-  cd /app
-else
-  cd /var/www/html 2>/dev/null || cd "$(pwd)"
+# Detectar diretório do app (variações comuns do Nixpacks/EasyPanel)
+APP_DIR=""
+for dir in /app /workspace /var/www/html /srv/app /code "$(pwd)"; do
+  if [ -f "$dir/public/index.php" ]; then
+    APP_DIR="$dir"
+    break
+  fi
+done
+
+if [ -z "$APP_DIR" ]; then
+  echo "[start] public/index.php não encontrado em diretórios conhecidos. Conteúdo atual:"
+  pwd; ls -la
+  exit 1
 fi
+
+cd "$APP_DIR"
 
 # Garantir diretórios necessários
 mkdir -p bootstrap/cache \
@@ -20,7 +30,7 @@ mkdir -p bootstrap/cache \
 if [ ! -f .env ]; then
   cat > .env <<EOF
 APP_NAME=${APP_NAME:-Gerenciar}
-APP_ENV=${APP_ENV:-codecanyon}
+APP_ENV=${APP_ENV:-local}
 APP_KEY=${APP_KEY:-}
 APP_DEBUG=${APP_DEBUG:-false}
 APP_URL=${APP_URL:-http://localhost}
