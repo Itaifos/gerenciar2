@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/usr/bin/env sh
+set -eu
 
 # Detectar diretório do app (variações comuns do Nixpacks/EasyPanel)
 APP_DIR=""
