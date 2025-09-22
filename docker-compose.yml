@@ -17,8 +17,8 @@ services:
         depends_on:
             - mysql
         volumes:
-            - ./storage:/app/storage
-            - ./public/user-uploads:/app/public/user-uploads
+            - ./storage:/var/www/html/storage
+            - ./public/user-uploads:/var/www/html/public/user-uploads
 
     mysql:
         image: mysql:8.0

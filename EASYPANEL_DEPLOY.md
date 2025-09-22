@@ -3,7 +3,7 @@
 ## ❌ Problema Encontrado
 
 ```
-The /app/bootstrap/cache directory must be present and writable.
+The /var/www/html/bootstrap/cache directory must be present and writable.
 Script @php artisan package:discover --ansi handling the post-autoload-dump event returned with error code 1
 ```
 
@@ -111,10 +111,10 @@ docker run -p 8000:80 gerenciar-test
 
 ```bash
 # Verificar estrutura de diretórios
-docker run --rm gerenciar-test ls -la /app/bootstrap/
+docker run --rm gerenciar-test ls -la /var/www/html/bootstrap/
 
 # Verificar permissões
-docker run --rm gerenciar-test ls -la /app/bootstrap/cache/
+docker run --rm gerenciar-test ls -la /var/www/html/bootstrap/cache/
 
 # Testar conexão com banco
 docker run --rm -e DB_HOST=mysql-service gerenciar-test php artisan migrate:status

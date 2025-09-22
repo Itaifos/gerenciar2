@@ -22,32 +22,31 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Configurar Apache
 RUN a2enmod rewrite
 RUN echo '<VirtualHost *:80>\n\
-    DocumentRoot /app/public\n\
-    <Directory /app/public>\n\
+    DocumentRoot /var/www/html/public\n\
+    <Directory /var/www/html/public>\n\
     AllowOverride All\n\
     Require all granted\n\
     </Directory>\n\
     </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
 
 # Definir diretório de trabalho
-WORKDIR /app
+WORKDIR /var/www/html
 
 # Criar diretórios necessários antes de copiar arquivos
-RUN mkdir -p /app/bootstrap/cache \
-    && mkdir -p /app/storage/logs \
-    && mkdir -p /app/storage/framework/cache \
-    && mkdir -p /app/storage/framework/sessions \
-    && mkdir -p /app/storage/framework/views \
-    && mkdir -p /app/storage/app/public \
-    && mkdir -p /app/public
+RUN mkdir -p /var/www/html/bootstrap/cache \
+    && mkdir -p /var/www/html/storage/logs \
+    && mkdir -p /var/www/html/storage/framework/cache \
+    && mkdir -p /var/www/html/storage/framework/sessions \
+    && mkdir -p /var/www/html/storage/framework/views \
+    && mkdir -p /var/www/html/storage/app/public
 
 # Copiar arquivos do projeto
-COPY . /app
+COPY . .
 
 # Configurar permissões básicas antes do composer
-RUN chown -R www-data:www-data /app \
-    && chmod -R 775 /app/bootstrap/cache \
-    && chmod -R 775 /app/storage
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 /var/www/html/bootstrap/cache \
+    && chmod -R 775 /var/www/html/storage
 
 # Instalar dependências PHP
 RUN composer install --no-dev --optimize-autoloader
@@ -56,15 +55,15 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm install && npm run build
 
 # Configurar permissões finais
-RUN chown -R www-data:www-data /app \
-    && chmod -R 755 /app/storage \
-    && chmod -R 755 /app/bootstrap/cache \
-    && chmod -R 755 /app/public
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html/storage \
+    && chmod -R 755 /var/www/html/bootstrap/cache \
+    && chmod -R 755 /var/www/html/public
 
 # Configurar supervisor para Laravel Queue
 RUN echo '[program:laravel-worker]\n\
     process_name=%(program_name)s_%(process_num)02d\n\
-    command=php /app/artisan queue:work --sleep=3 --tries=3 --max-time=3600\n\
+    command=php /var/www/html/artisan queue:work --sleep=3 --tries=3 --max-time=3600\n\
     autostart=true\n\
     autorestart=true\n\
     stopasgroup=true\n\
@@ -72,7 +71,7 @@ RUN echo '[program:laravel-worker]\n\
     user=www-data\n\
     numprocs=1\n\
     redirect_stderr=true\n\
-    stdout_logfile=/app/storage/logs/worker.log\n\
+    stdout_logfile=/var/www/html/storage/logs/worker.log\n\
     stopwaitsecs=3600' > /etc/supervisor/conf.d/laravel-worker.conf
 
 # Expor porta
