@@ -1,20 +1,24 @@
 #!/bin/bash
 set -e
 
+# Garantir que estamos em /app
+cd /app
+
 # Criar diretórios necessários se não existirem
 echo "Criando diretórios necessários..."
-mkdir -p /var/www/html/bootstrap/cache
-mkdir -p /var/www/html/storage/logs
-mkdir -p /var/www/html/storage/framework/cache
-mkdir -p /var/www/html/storage/framework/sessions
-mkdir -p /var/www/html/storage/framework/views
-mkdir -p /var/www/html/storage/app/public
+mkdir -p /app/bootstrap/cache
+mkdir -p /app/storage/logs
+mkdir -p /app/storage/framework/cache
+mkdir -p /app/storage/framework/sessions
+mkdir -p /app/storage/framework/views
+mkdir -p /app/storage/app/public
+mkdir -p /app/public
 
 # Configurar permissões
 echo "Configurando permissões..."
-chown -R www-data:www-data /var/www/html
-chmod -R 775 /var/www/html/bootstrap/cache
-chmod -R 775 /var/www/html/storage
+chown -R www-data:www-data /app
+chmod -R 775 /app/bootstrap/cache
+chmod -R 775 /app/storage
 
 # Aguardar o banco de dados estar disponível
 echo "Aguardando banco de dados..."
@@ -51,5 +55,5 @@ php artisan view:cache
 echo "Iniciando supervisor..."
 supervisord -c /etc/supervisor/supervisord.conf &
 
-# Executar comando principal
+# Executar comando principal (Apache)
 exec "$@"

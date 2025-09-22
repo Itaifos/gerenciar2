@@ -111,10 +111,10 @@ docker run -p 8000:80 gerenciar-test
 
 ```bash
 # Verificar estrutura de diretórios
-docker run --rm gerenciar-test ls -la /var/www/html/bootstrap/
+docker run --rm gerenciar-test ls -la /app/bootstrap/
 
 # Verificar permissões
-docker run --rm gerenciar-test ls -la /var/www/html/bootstrap/cache/
+docker run --rm gerenciar-test ls -la /app/bootstrap/cache/
 
 # Testar conexão com banco
 docker run --rm -e DB_HOST=mysql-service gerenciar-test php artisan migrate:status
