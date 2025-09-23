@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Configurar Apache
-RUN a2enmod rewrite \
+RUN a2enmod rewrite headers \
     && echo 'ServerName localhost' > /etc/apache2/conf-available/servername.conf \
     && a2enconf servername \
     && echo '<VirtualHost *:80>\n\
