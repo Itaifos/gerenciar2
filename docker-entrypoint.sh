@@ -52,6 +52,10 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
+# Garantir storage:link
+echo "Criando symlink de storage -> public/storage (se necessário)..."
+php artisan storage:link || true
+
 # Iniciar supervisor para workers
 echo "Iniciando supervisor..."
 supervisord -c /etc/supervisor/supervisord.conf &
