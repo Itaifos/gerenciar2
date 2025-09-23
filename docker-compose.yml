@@ -18,7 +18,8 @@ services:
             - mysql
         volumes:
             - ./storage:/var/www/html/storage
-            - ./public/user-uploads:/var/www/html/public/user-uploads
+            - ./public:/var/www/html/public
+
 
     mysql:
         image: mysql:8.0
