@@ -1,5 +1,5 @@
-# Use PHP 8.2 com Apache
-FROM php:8.2-apache
+# Use PHP 8.2 com PHP-FPM (para funcionar atrás do Nginx do provedor)
+FROM php:8.2-fpm
 
 # Instalar dependências do sistema
 RUN apt-get update && apt-get install -y \
@@ -20,15 +20,7 @@ RUN apt-get update && apt-get install -y \
 # Instalar Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Configurar Apache
-RUN a2enmod rewrite
-RUN echo '<VirtualHost *:80>\n\
-    DocumentRoot /var/www/html/public\n\
-    <Directory /var/www/html/public>\n\
-    AllowOverride All\n\
-    Require all granted\n\
-    </Directory>\n\
-    </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
+# (Sem Apache) O Nginx externo fará o proxy para o PHP-FPM na porta 9000
 
 # Definir diretório de trabalho
 WORKDIR /var/www/html
@@ -75,12 +67,12 @@ RUN echo '[program:laravel-worker]\n\
     stdout_logfile=/var/www/html/storage/logs/worker.log\n\
     stopwaitsecs=3600' > /etc/supervisor/conf.d/laravel-worker.conf
 
-# Expor porta
-EXPOSE 80
+# Expor porta do PHP-FPM
+EXPOSE 9000
 
 # Script de inicialização
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["apache2-foreground"]
+CMD ["php-fpm"]
