@@ -127,7 +127,7 @@
                     </div>
                     
                     <div class="flex">
-                        <a href="https://envato.froid.works/priority-support?purchase_code={{ global_setting()->purchase_code }}&utm_source=tabletrack_app&utm_campaign=priority_support" target="_blank" 
+                        <a href="#" onclick="alert('Priority support indisponível'); return false;" 
                                 class="inline-flex items-center px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg transition-colors duration-200">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>

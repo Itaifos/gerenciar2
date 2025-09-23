@@ -79,13 +79,7 @@
                                 @include('custom-modules.sections.version', ['module' => $universalBundle])
                             @endif
                             <div class="mx-2">
-                                @if ($fetchSetting?->license_type)
-                                    <span class="badge badge-secondary">{{ $fetchSetting->license_type }}</span>
-                                    @if (str_contains($fetchSetting->license_type, 'Regular'))
-                                        <a href="{{ \Froiden\Envato\Helpers\FroidenApp::buyExtendedUrl(config(strtolower($universalBundle) . '.envato_item_id')) }}"
-                                            target="_blank">Upgrade now</a>
-                                    @endif
-                                @endif
+                                {{-- Indicadores de licença removidos --}}
 
                                 @if (
                                     $fetchSetting?->purchase_code &&
@@ -95,12 +89,7 @@
                                 @endif
 
                             </div>
-                            @if ($fetchSetting?->purchase_code && $fetchSetting?->supported_until)
-                                <div class="mx-2 mt-2">
-{{--                                    <i class="fa fa-info-circle"></i>--}}
-                                    @include('custom-modules.sections.support-date')
-                                </div>
-                            @endif
+                            {{-- Support date removido --}}
                         </div>
                     </div>
                 </div>
@@ -110,23 +99,8 @@
                         
                         @if ($fetchSetting)
 
-                            @if (config(strtolower($universalBundle) . '.verification_required'))
-                                <div class="d-flex align-items-center justify-content-end">
-                                     @include('custom-modules.sections.purchase-code', ['module' => $universalBundle])
-                                </div>
-                            @endif
-                            @if ($plugins->where('envato_id', config(strtolower($universalBundle) . '.envato_item_id'))->first())
-                                <div class="mt-3 d-flex align-items-center justify-content-end">
-                                    @include('custom-modules.sections.module-update', ['module' => $universalBundle, 'fetchSetting' => $fetchSetting])
-                                    {{-- <div class="custom-control custom-switch ml-2 d-inline-block"  data-toggle="tooltip"
-                                        data-original-title="@lang('app.moduleNotifySwitchMessage', ['name' => $universalBundle])">
-                                        <input type="checkbox" class="custom-control-input change-module-notification"
-                                                @checked($fetchSetting->notify_update)
-                                            id="module-notification-{{ $universalBundle }}" data-module-name="{{ $universalBundle }}">
-                                        <label class="custom-control-label cursor-pointer" for="module-notification-{{ $universalBundle }}"></label>
-                                    </div> --}}
-                                </div>
-                            @endif
+                            {{-- Verificação de purchase code removida --}}
+                            {{-- Atualização via Envato removida --}}
                         @endif
                     </div>
                     @if (!config(strtolower($universalBundle) . '.name'))

@@ -129,7 +129,7 @@
         </div>
     </div>
 
-    @include('vendor.froiden-envato.plugins')
+{{-- Plugins Envato removidos --}}
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="//envato.froid.works/plugins/froiden-helper/helper.js"></script>
@@ -158,23 +158,7 @@
                 return false;
             }
 
-            $.easyAjax({
-                type: 'POST',
-                url: "{{ route('purchase-verified') }}",
-                data: $("#verify-form").serialize(),
-                container: "#verify-form",
-                messagePosition: "inline",
-                success: function (response) {
-                    if (response.status === 'success') {
-                        showSuccess(response);
-                    } else if (response.status === 'fail' && response.data?.server) {
-                        showError({responseJSON: {message: response.data.server.message}});
-                    }
-                },
-                error: function(xhr) {
-                    showError(xhr);
-                }
-            });
+            alert('Verificação de compra desabilitada.');
             return false;
         }
 

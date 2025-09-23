@@ -14,13 +14,12 @@ use App\Models\FrontFeature;
 use App\Models\FrontReviewSetting;
 use App\Models\LanguageSetting;
 use App\Models\Restaurant;
-use Froiden\Envato\Traits\AppBoot;
 use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {
 
-    use AppBoot;
+    // Removido AppBoot (verificação de licença)
     
     protected $language;
     
@@ -59,7 +58,7 @@ class HomeController extends Controller
     public function landing()
     {
 
-        $this->showInstall();
+        // Removido showInstall()
 
         $global = global_setting();
 

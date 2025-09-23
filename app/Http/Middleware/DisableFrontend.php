@@ -3,14 +3,12 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Froiden\Envato\Traits\AppBoot;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
 class DisableFrontend
 {
-    use AppBoot;
     /**
      * Handle an incoming request.
      *
@@ -18,7 +16,7 @@ class DisableFrontend
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $this->showInstall();
+        // Removido: showInstall/isLegal relacionados a verificação de licença
 
         try {
             $global = global_setting();

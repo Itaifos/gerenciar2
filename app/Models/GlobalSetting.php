@@ -60,8 +60,6 @@ class GlobalSetting extends BaseModel
 
     protected $casts = [
         'purchased_on' => 'datetime',
-        'supported_until' => 'datetime',
-        'last_license_verified_at' => 'datetime',
         'last_cron_run' => 'datetime',
     ];
 

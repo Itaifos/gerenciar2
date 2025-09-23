@@ -4,17 +4,15 @@ namespace App\Livewire\Settings;
 
 use Livewire\Component;
 use Nwidart\Modules\Facades\Module;
-use Froiden\Envato\Functions\EnvatoUpdate;
 use Macellan\Zip\Zip;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
-use Froiden\Envato\Traits\ModuleVerify;
 
 class CustomModuleSettings extends Component
 {
 
-    use ModuleVerify;
+    // Verificação de módulos desativada
 
     public $updateFilePath;
 

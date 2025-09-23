@@ -13,9 +13,7 @@
         "endroid/qr-code": "^5.0",
         "fakerphp/faker": "^1.23",
         "flutterwavedev/flutterwave-v3": "^1.0",
-        "froiden/envato": "^5.0",
-        "froiden/laravel-installer": "^11.0",
-        "froiden/laravel-rest-api": "^12.0",
+        
         "guzzlehttp/guzzle": "^7.9",
         "http-interop/http-factory-guzzle": "^1.2",
         "intervention/image": "^2.5",

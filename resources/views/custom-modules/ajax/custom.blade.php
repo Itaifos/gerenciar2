@@ -373,17 +373,17 @@
 
                         @if ($fetchSetting)
                             @if ($verificationRequired)
-                                @include('custom-modules.sections.purchase-code')
+                                {{-- Purchase code removido --}}
                             @endif
                         @endif
                     </td>
                     @endif
                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm">
                         @if ($settingClass)
-                            @include('custom-modules.sections.version')
+                            {{-- Versão licenciada removida --}}
 
                             @if ($plugins->where('envato_id', $envatoId)->first() && !(module_enabled('UniversalBundle') && isInstallFromUniversalBundleModule($key)))
-                                @include('custom-modules.sections.module-update')
+                                {{-- Update/licença removidos --}}
                             @endif
                         @endif
                     </td>
@@ -491,7 +491,7 @@
         </div>
     </div>
 
-    @include('vendor.froiden-envato.update.plugins', ['allModules' => $allModules])
+    {{-- Plugins Envato removidos --}}
 
 </div>
 
@@ -711,7 +711,7 @@
 <script src="{{ asset('vendor/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/froiden-helper/helper.js') }}"></script>
 
-@include('vendor.froiden-envato.update.update_script')
+{{-- Script de update Envato removido --}}
 
 <script>
     $('body').on('click', '.show-hide-purchase-code', function () {
@@ -839,5 +839,5 @@
 }
 </script>
 
-@includeIf('vendor.froiden-envato.update.update_module')
+{{-- Update de módulo Envato removido --}}
 

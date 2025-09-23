@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Froiden\Envato\Functions\EnvatoUpdate;
-use Froiden\Envato\Traits\ModuleVerify;
+// Removidos EnvatoUpdate/ModuleVerify (licenciamento)
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
@@ -18,7 +17,7 @@ use App\Events\ModuleStatusChanged;
 
 class CustomModuleController extends Controller
 {
-    use ModuleVerify;
+    // Licenciamento de módulos desativado
 
     public function index()
     {
@@ -36,7 +35,7 @@ class CustomModuleController extends Controller
 
         $this->view = 'custom-modules.ajax.custom';
         $this->activeTab = 'custom';
-        $this->plugins = collect(EnvatoUpdate::plugins());
+        $this->plugins = collect();
 
         if (request()->ajax()) {
             $html = view($this->view, $this->data)->render();
@@ -201,7 +200,7 @@ class CustomModuleController extends Controller
         $module = $request->module;
         $purchaseCode = $request->purchase_code;
 
-        return $this->modulePurchaseVerified($module, $purchaseCode);
+        return Reply::success('Verification disabled. Module allowed.');
     }
 
     /**

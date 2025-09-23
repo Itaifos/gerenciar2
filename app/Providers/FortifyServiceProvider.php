@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
 use App\Models\OnboardingStep;
-use Froiden\Envato\Traits\AppBoot;
 use Illuminate\Support\Facades\Hash;
 use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Support\ServiceProvider;
@@ -23,7 +22,6 @@ use Illuminate\Support\Facades\Auth;
 class FortifyServiceProvider extends ServiceProvider
 {
 
-    use AppBoot;
 
     /**
      * Register any application services.
@@ -69,22 +67,7 @@ class FortifyServiceProvider extends ServiceProvider
     {
 
         Fortify::loginView(function () {
-            $this->showInstall();
-
             $this->checkMigrateStatus();
-
-            if (!$this->isLegal()) {
-                if (!module_enabled('Subdomain')) {
-                    return redirect('verify-purchase');
-                }
-
-                // We will only show verify page for super-admin-login
-                // We will check it's opened on main or not
-                if (Str::contains(request()->url(), 'super-admin-login')) {
-                    return redirect('verify-purchase');
-                }
-            }
-
             return view('auth.login');
         });
 
