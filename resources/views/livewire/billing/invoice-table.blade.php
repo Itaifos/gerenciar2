@@ -55,7 +55,11 @@
                                 {{ $invoice->id }}
                             </td>
                             <td class="py-2.5 px-4 text-sm text-gray-900 whitespace-nowrap dark:text-white">
-                                <a href="{{ route('superadmin.restaurants.show', $invoice->restaurant->hash) }}" class="underline underline-offset-1 font-medium" wire:navigate>{{ $invoice->restaurant->name }}</a>
+                                @if ($invoice->restaurant)
+                                    <a href="{{ route('superadmin.restaurants.show', ['restaurant' => $invoice->restaurant]) }}" class="underline underline-offset-1 font-medium" wire:navigate>{{ $invoice->restaurant->name }}</a>
+                                @else
+                                    <span>-</span>
+                                @endif
                             </td>
                             <td class="py-2.5 px-4 text-sm text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $invoice->package->package_name }}<br>
