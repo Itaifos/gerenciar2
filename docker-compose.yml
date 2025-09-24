@@ -23,7 +23,7 @@ services:
             - mysql
         volumes:
             - ./storage:/var/www/html/storage
-            - ./public:/var/www/html/public
+            # Não montar public em produção para não sobrescrever assets buildados
 
 
     mysql:
