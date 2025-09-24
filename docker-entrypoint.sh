@@ -9,6 +9,7 @@ echo "Criando diretórios necessários..."
 mkdir -p /var/www/html/bootstrap/cache
 mkdir -p /var/www/html/storage/logs
 mkdir -p /var/www/html/storage/framework/cache
+mkdir -p /var/www/html/storage/framework/cache/data
 mkdir -p /var/www/html/storage/framework/sessions
 mkdir -p /var/www/html/storage/framework/views
 mkdir -p /var/www/html/storage/app/public
@@ -17,6 +18,7 @@ mkdir -p /var/www/html/public
 
 # Configurar permissões
 echo "Configurando permissões..."
+umask 0002
 chown -R www-data:www-data /var/www/html
 chmod -R 775 /var/www/html/bootstrap/cache
 chmod -R 775 /var/www/html/storage
