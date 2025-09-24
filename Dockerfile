@@ -60,10 +60,10 @@ RUN composer install --no-dev --optimize-autoloader
 # Instalar dependências Node.js e build
 RUN npm install && npm run build
 
-# Configurar permissões finais
+# Configurar permissões finais (775 para permitir escrita por grupo)
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html/storage \
-    && chmod -R 755 /var/www/html/bootstrap/cache \
+    && chmod -R 775 /var/www/html/storage \
+    && chmod -R 775 /var/www/html/bootstrap/cache \
     && chmod -R 755 /var/www/html/public
 
 # Configurar supervisor para Laravel Queue

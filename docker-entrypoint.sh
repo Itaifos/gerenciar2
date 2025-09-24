@@ -46,11 +46,17 @@ fi
 echo "Executando migrações..."
 php artisan migrate --force
 
-# Limpar e otimizar cache
+# Limpar caches e otimizar novamente
+echo "Limpando caches..."
+php artisan optimize:clear || true
+php artisan cache:clear || true
+php artisan config:clear || true
+php artisan view:clear || true
+
 echo "Otimizando aplicação..."
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+php artisan config:cache || true
+php artisan route:cache || true
+php artisan view:cache || true
 
 # Garantir storage:link
 echo "Criando symlink de storage -> public/storage (se necessário)..."

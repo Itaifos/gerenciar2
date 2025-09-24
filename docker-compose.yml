@@ -5,6 +5,11 @@ services:
         build: .
         ports:
             - "8000:80"
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost/up"]
+            interval: 30s
+            timeout: 10s
+            retries: 3
         environment:
             - APP_ENV=production
             - APP_DEBUG=false
